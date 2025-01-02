@@ -46,6 +46,8 @@ vim.keymap.set('!', '<M-BS>', readline.backward_kill_word)
 vim.keymap.set('!', '<C-w>', readline.unix_word_rubout)
 vim.keymap.set('!', '<C-k>', readline.kill_line)
 vim.keymap.set('!', '<C-u>', readline.backward_kill_line)
+vim.keymap.set('!', '<C-f>', readline.forward_char)
+vim.keymap.set('!', '<C-b>', readline.backward_char)
 ```
 
 ## Design
