@@ -223,6 +223,22 @@ local function backward_word_cursor(s, char_idx, word_chars)
   return new_cursor(s, char_idx, -1, word_chars)
 end
 
+local function forward_char()
+  local line_no = vim.fn.line('.')
+  local col_no = vim.fn.col('.') - 1
+  vim.fn.cursor(line_no, col_no + 2)
+end
+
+local function backward_char()
+  local line_no = vim.fn.line('.')
+  local col_no = vim.fn.col('.') - 1
+  if col_no > 0 then
+    vim.fn.cursor(line_no, col_no)
+  else
+    vim.fn.cursor(line_no, col_no)
+  end
+end
+
 local function build_trie_node()
   return {
     terminal = false,
